@@ -9,27 +9,17 @@ import { useHistory } from 'react-router-dom';
 function PageAdopta() {
 
     let history = useHistory();
-    // const [perros, setPerros] = useState([]);
-    // function getPerros() {
-    //     axios
-    //         .get('http://localhost:4000/mascotas')
-    //         .then((response) => {
-    //             setPerros(response.data);
-    //         })
-    //         .catch((e) => { });
-    // }
-    // useEffect(() => {
-    //     getPerros();
-    // }, []);
+
     const [allData, setAllData] = useState([]);
     const [filteredData, setFilteredData] = useState(allData);
     const handleSearch = (event) => {
       let value = event.target.value.toUpperCase();
       let result = [];
-      console.log(value);
       result = allData.filter((data) => {
+          
         return data.name.search(value) != -1;
       });
+      console.log(result)
       setFilteredData(result);
     }
 
@@ -51,7 +41,7 @@ function PageAdopta() {
           setFilteredData(response.data);
         })
         .catch(error => {
-          console.log('Error getting fake data: ' + error);
+          console.log('Error: ' + error);
         })
     }, []);
 
@@ -71,7 +61,7 @@ function PageAdopta() {
                 <form action="" >
                     <h2>Edad</h2>
                     <select name="" id="" onChange={(event) => handleTall(event)} >
-                        <option value="" select >Talla</option>
+                        <option value="" select hidden>Talla</option>
                         <option value="Pequeño">Pequeño</option>
                         <option value="Mediano">Mediano</option>
                         <option value="Grande">Grande</option>
