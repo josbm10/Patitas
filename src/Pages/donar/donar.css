@@ -1,0 +1,72 @@
+.donar_container {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../assets/image/Donar.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+.donar_container div {
+  margin: 1%;
+  background: white;
+  border-radius: 8px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+.donar_container div:nth-child(1)
+{
+  width: 98%;
+}
+.donar_container div:nth-child(2),
+.donar_container div:nth-child(3),
+.donar_container div:nth-child(4),
+.donar_container div:nth-child(5),
+.donar_container div:nth-child(7),
+.donar_container div:nth-child(6),
+.donar_container div:nth-child(8),
+.donar_container div:nth-child(9) {
+  width: 48%;
+}
+
+.donar_container form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  padding: 40px 10px 40px 10px;
+}
+.donar_container div:hover {
+  border: 1px solid skyblue;
+}
+.donar_container input,
+.donar_container select {
+  width: 90%;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+.donar_container input:nth-child(3){
+    width: 80%;
+}
+.donar_icons {
+  width: 10%;
+}
+.donar_container button{
+    margin: 5% 35% 5% 35%;
+    width: 30%;
+    padding: 10px;
+    border-radius: 8px;
+    background: red;
+    color: white;
+    border: none;
+}
+.donar_container span{
+    color: black;
+}
+.donar_container h2{
+    font-size: 30px;
+
+}

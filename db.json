@@ -1,0 +1,119 @@
+{
+  "mascotas": [
+    {
+      "status": "false",
+      "name": "BELLATRIX",
+      "photo": "https://upload.wikimedia.org/wikipedia/commons/9/94/Cane_da_pastore_tedesco_adulto.jpg",
+      "age": "5",
+      "tall": "Mediano",
+      "sex": "Hembra",
+      "activity": "Alta",
+      "hair": "Corto",
+      "history": "¡Hola, mi nombre es Bella! ¿Sabes por qué me pusieron ese nombre? Pues porque soy super linda y noble. A mi me rescataron con bastantes problemas de piel, pero con mucho cuidado y amor, he logrado recuperarme de a pocos. Ahora ya estoy lista para irme a mi nuevo hogar. Soy una Wuf super cariñosa que siempre busco estar acompañada, por lo que busco una familia que me acompañe por siempre. Además, si me adoptas, vengo con un kit de regalos ¡Anímate!",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "ANITA",
+      "photo": "https://www.tiendanimal.es/articulos/wp-content/uploads/2017/02/comen-los-cachorros-border-collie-1200x720.jpg",
+      "status": "false",
+      "sex": "Hembra",
+      "hair": "Corto",
+      "tall": "Mediano",
+      "activity": "Alta",
+      "age": "8",
+      "history": "¡Hola! Mi nombre es Anita y contigo, mi querido humano, tendremos una amistad que no olvidarás jamás. Me encanta jugar, saltar y divertirme con otros perros. Además, si me adoptas, vengo con un kit de regalos. ¡Anímate!"
+    },
+    {
+      "status": "false",
+      "name": "NACHO",
+      "photo": "https://www.eluniverso.com/resizer/y4Scc_nzI4QX7pgXMIhZpiIGBkg=/1190x670/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/YKYSZKHYV5FOFJCC3ZFY42ABYE.jpg",
+      "age": "9",
+      "tall": "Grande",
+      "sex": "Hembra",
+      "activity": "Alta",
+      "hair": "Corto",
+      "history": "¡Hola! Mi nombre es Nacho. Me encanta jugar, saltar y divertirme con otros perros. Soy un Wuf super fiel y amoroso. Además, si me adoptas, vengo con un kit de regalos. ¡Anímate!",
+      "id": 3
+    },
+    {
+      "status": "true",
+      "name": "CHIPI",
+      "photo": "https://superpet.pe/blog/wp-content/uploads/2021/08/Golden-Retriever-La-gui%CC%81a-completa-de-esta-raza-1-750x450.jpg",
+      "age": "4",
+      "tall": "Mediano",
+      "sex": "Macho",
+      "activity": "Nivel de actividad",
+      "hair": "Corto",
+      "history": "Yo soy Chipi, y no vas a encontrar un Wuf más bueno que yo. Soy tranquilo, obediente y no entiendo el concepto de lo que son los juguetes, así que prefiero corretear para divertirme. Me gusta pasear y relajarme mientras me hacen cariño. Además, si me adoptas, vengo con un kit de regalos ¡Anímate!",
+      "id": 4
+    },
+    {
+      "status": "false",
+      "name": "MONGO",
+      "photo": "https://www.purina-latam.com/sites/g/files/auxxlc391/files/styles/social_share_large/public/purina-7-razas-de-perros-peque%C3%B1os-para-departamento.png?itok=YVNHzG8L",
+      "age": "5",
+      "tall": "Mediano",
+      "sex": "Macho",
+      "activity": "Mediano",
+      "hair": "Corto",
+      "history": "¡Hola! Mi nombre es Mongo, y soy un Wuf super noble. Espero pronto encontrar un hogar en donde me den mucho amor, tanto como el que yo estoy dispuesto a dar. ¡Seremos los mejores amigos! Además, si me adoptas, vengo con un kit de regalos ¡Anímate!",
+      "id": 5
+    },
+    {
+      "status": "false",
+      "name": "LUCAS",
+      "photo": "https://static.wixstatic.com/media/5ab9c4_2216b678e7544750991aabcb422527f5~mv2.jpg/v1/fill/w_560,h_465,al_c,q_85/5ab9c4_2216b678e7544750991aabcb422527f5~mv2.jpg",
+      "age": "6",
+      "tall": "Pequeño",
+      "sex": "Macho",
+      "activity": "Mediano",
+      "hair": "Largo",
+      "history": "¡Hola! Mi nombre es Lucas, y soy un Wuf super noble. Espero pronto encontrar un hogar en donde me den mucho amor, tanto como el que yo estoy dispuesto a dar. ¡Seremos los mejores amigos! Además, si me adoptas, vengo con un kit de regalos ¡Anímate!",
+      "id": 6
+    },
+    {
+      "status": "false",
+      "name": " TOFFE",
+      "photo": "https://static.wixstatic.com/media/5ab9c4_f6141c4deb8f493caf5ebb9d46820f61~mv2.jpg/v1/fill/w_560,h_465,al_c,q_85/5ab9c4_f6141c4deb8f493caf5ebb9d46820f61~mv2.jpg",
+      "age": "3",
+      "tall": "Pequeño",
+      "sex": "Macho",
+      "activity": "Mediano",
+      "hair": "Corto",
+      "history": "¡Hola! Mi nombre es Toffe, y soy un Wuf un poco tímido pero super cariñoso. Busco una familia que me engría mucho y me quiera. Además, si me adoptas, vengo con un kit de regalos ¡Anímate!",
+      "id": 7
+    },
+    {
+      "status": "true",
+      "name": "ROSY",
+      "photo": "https://static.wixstatic.com/media/5ab9c4_a4ec0440ea954d5db6fc13c48866701d~mv2.jpg/v1/fill/w_560,h_465,al_c,q_85/5ab9c4_a4ec0440ea954d5db6fc13c48866701d~mv2.jpg",
+      "age": "6",
+      "tall": "Mediano",
+      "sex": "Hembra",
+      "activity": "Mediano",
+      "hair": "Corto",
+      "history": "¡Hola! Mi nombre es Rosy, y soy un Wuf hermosa. Ya llevo un tiempo en el albergue, por lo que estoy buscando casita para tener mi propia familia. Soy super cariñosa, te prometo que seremos buenos amigos. Además, si me adoptas, vengo con un kit de regalos ¡Anímate!",
+      "id": 8
+    },
+    {
+      "status": "false",
+      "name": "CHINA",
+      "photo": "https://static.wixstatic.com/media/f4b088_db836db2fc5c4ce5996cfcce50d394a6~mv2.jpg/v1/fill/w_672,h_558,al_c,lg_1,q_85/f4b088_db836db2fc5c4ce5996cfcce50d394a6~mv2.jpg",
+      "age": "8",
+      "tall": "Mediano",
+      "sex": "Hembra",
+      "activity": "Mediano",
+      "hair": "Corto",
+      "history": "¡Hola!Mi nombre es China, soy una Wuf tranquila y me gusta conocer muy bien a mis humanos para entrar en confianza y no parar de jugar, saltar, perseguir pelotas, palos, botellas ¡lo que sea! Además, si me adoptas, vengo con un kit de regalos ¡Anímate!",
+      "id": 9
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}
