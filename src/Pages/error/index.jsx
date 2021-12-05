@@ -5,7 +5,7 @@ function PageError(){
     return(
         <div className="error_container">
             <img src="https://st4.depositphotos.com/7051866/39923/v/600/depositphotos_399235686-stock-illustration-404-error-page-vector-illustration.jpg" alt="error" />
-            <button onClick={(()=>{history.push("/home")})}>Regresar al inicio</button>
+            <button onClick={(()=>{history.push("/")})}>Regresar al inicio</button>
         </div>
     )
 }

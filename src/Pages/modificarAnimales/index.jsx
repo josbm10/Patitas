@@ -90,7 +90,7 @@ function PageModificarAnimales() {
                 <select ref={put_activity} required>
                     <option selected hidden>Nivel de actividad</option>
                     <option value='Bajo' selected={perros.activity==='Bajo'} >Bajo</option>
-                    <option value='Mediano' selected={perros.activity==='Mediano'} >Mediano</option>
+                    <option value='Medio' selected={perros.activity==='Medio'} >Medio</option>
                     <option value='Alto' selected={perros.activity==='Alto'} >Alto</option>
                 </select>
                 <select ref={put_hair}required>

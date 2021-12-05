@@ -15,7 +15,7 @@ function PageDonar() {
                 <div>
                     <FaRegCalendarCheck className='donar_icons' />
                     <select name="" id="">
-                        <option value="" selected hidden>Periodo</option>
+                        <option selected hidden>Periodo</option>
                         <option value="" >Mensual</option>
                         <option value="">Pago Unico</option>
                     </select>

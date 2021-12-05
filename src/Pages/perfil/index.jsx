@@ -1,8 +1,8 @@
 import "./perfil.css";
 import { useEffect, useState } from 'react';
-import { Link,useParams,useHistory } from "react-router-dom";
+import { useParams,useHistory } from "react-router-dom";
 import axios from 'axios';
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 function PagePerfil(props) {
 
@@ -47,9 +47,9 @@ function PagePerfil(props) {
                     <li className='li_redes'>
                         Compartelo en las redes sociales
                         <div>
-                            <Link to="https://www.facebook.com/" target="_blank"><FaFacebook /></Link>
-                            <a href=''><FaTwitter /></a>
-                            <a href=''><FaInstagram /></a>
+                            <a target='_blank' href='https://www.facebook.com'><FaFacebook /></a>
+                            <a  href='https://www.twitter.com'  target="_blank"><FaTwitter /></a>
+                            <a  href='https://www.youtube.com' target="_blank"><FaYoutube /></a>
                         </div>
 
                     </li>

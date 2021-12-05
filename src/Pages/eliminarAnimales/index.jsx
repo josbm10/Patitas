@@ -1,7 +1,9 @@
- import axios from "axios";
- import './eliminar.css'
- import { useRef } from "react";
+import axios from "axios";
+import './eliminar.css'
+import { useRef } from "react";
+import { useHistory } from "react-router";
 function PageEliminarAnimales() {
+    const history = useHistory();
     function getMascota(id_delete) {
         axios
             .delete(`http://localhost:4000/mascotas/${id_delete}`)

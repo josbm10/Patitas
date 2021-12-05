@@ -75,7 +75,7 @@ function PageRegistroAnimales() {
                   }>
                     <option selected hidden>Nivel de actividad</option>
                     <option value='Bajo'>Bajo</option>
-                    <option value='Mediano'>Mediano</option>
+                    <option value='Medio'>Medio</option>
                     <option value='Alto'>Alto</option>
                 </select>
                 <select required

@@ -17,7 +17,7 @@ function PageAdopta() {
       let result = [];
       result = allData.filter((data) => {
           
-        return data.name.search(value) != -1;
+        return data.name.search(value) !== -1;
       });
       console.log(result)
       setFilteredData(result);
@@ -28,13 +28,40 @@ function PageAdopta() {
         let result = [];
         console.log(value);
         result = allData.filter((data) => {
-          return data.tall.search(value) != -1;
+          return data.tall.search(value) !== -1;
+        });
+        setFilteredData(result);
+      }
+      const handleSex = (event) => {
+        let value = event.target.value;
+        let result = [];
+        console.log(value);
+        result = allData.filter((data) => {
+          return data.sex.search(value) !== -1;
+        });
+        setFilteredData(result);
+      }
+      const handleHair = (event) => {
+        let value = event.target.value;
+        let result = [];
+        console.log(value);
+        result = allData.filter((data) => {
+          return data.hair.search(value) !== -1;
+        });
+        setFilteredData(result);
+      }
+      const handleActivity = (event) => {
+        let value = event.target.value;
+        let result = [];
+        console.log(value);
+        result = allData.filter((data) => {
+          return data.activity.search(value) !== -1;
         });
         setFilteredData(result);
       }
    
     useEffect(() => {
-      axios('http://localhost:4000/mascotas')
+      axios.get('http://localhost:4000/mascotas')
         .then(response => {
           console.log(response.data)
           setAllData(response.data);
@@ -47,88 +74,47 @@ function PageAdopta() {
 
     return (
 
-        <div class="mascotas_container">
+        <div className="mascotas_container">
             <Breadcrumb className='Breadcrumb'>
                 <Breadcrumb.Item onClick={() => history.push('/')}>Home</Breadcrumb.Item>
                 <Breadcrumb.Item active>Adopta</Breadcrumb.Item>
             </Breadcrumb>
-            <div class="mascotas_filters">
-                <div style={{ margin: '0 auto', marginTop: '10%' }}>
-                    <label>Buscar:</label>
-                    <input type="text" placeholder='Buscar' onChange={(event) => handleSearch(event)} />
-                </div>
+            <div className="mascotas_filters">
+        
+                    <h2>Buscar :</h2>
+                    <input type="text" placeholder='Nombre' onChange={(event) => handleSearch(event)} />
+                
                 <h2>Filtrar por:</h2>
-                <form action="" >
-                    <h2>Edad</h2>
+               
+                    <h2>Tamaño</h2>
                     <select name="" id="" onChange={(event) => handleTall(event)} >
-                        <option value="" select hidden>Talla</option>
+                        <option value="" select >Tamaño</option>
                         <option value="Pequeño">Pequeño</option>
                         <option value="Mediano">Mediano</option>
                         <option value="Grande">Grande</option>
                     </select>
-                    <ul>
-                        <li> <input type="checkbox" id="age_1to3" value='3' name="edad"/>
-                            <label htmlFor="age_1to3">1-3 años</label>
-                        </li>
-                        <li> <input type="checkbox" id="age_4to7" value='7' name="edad"/>
-                            <label htmlFor="age_4to7">4-7 años</label>
-                        </li>
-                        <li> <input type="checkbox" id="age_7plus" value='8' name="edad"/>
-                            <label htmlFor="age_7plus">+7 años</label>
-                        </li>
-                    </ul>
-
-                    <h2>Tamaño</h2>
-                    <ul>
-                        <li> <input type="checkbox" id="tall_small" value='Pequeño'  />
-                            <label htmlFor="tall_small">Pequeño</label>
-                        </li>
-                        <li><input type="checkbox" id="tall_medium" value='Mediano'  />
-                            <label htmlFor="tall_medium">Mediano</label>
-                        </li>
-                        <li> <input type="checkbox" id="tall_large" value='Grande' />
-                            <label htmlFor="">Grande</label>
-                        </li>
-                    </ul>
-
                     <h2>Sexo</h2>
-                    <ul>
-                        <li> <input type="checkbox" id="sex_female" value='Hembra' />
-                            <label htmlFor="sex_female">Hembra</label>
-                        </li>
-                        <li> <input type="checkbox" id="sex_masculine" value='Macho' />
-                            <label htmlFor="sex_masculine">Macho</label>
-                        </li>
-                    </ul>
-
-
+                    <select name="" id="" onChange={(event) => handleSex(event)} >
+                        <option value="" select >Sexo</option>
+                        <option value="Hembra">Hembra</option>
+                        <option value="Macho">Macho</option>
+                    </select>
                     <h2>Nivel de actividad</h2>
-                    <ul>
-                        <li><input type="checkbox" id="activity_low" value='Bajo' />
-                            <label htmlFor="activity_low">Bajo</label>
-                        </li>
-                        <li> <input type="checkbox" id="activity_medium" value='Mediano'  />
-                            <label htmlFor="activity_medium">Mediano</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" id="activity_high" value='Alto'  />
-                            <label htmlFor="activity_high">Alto</label>
-                        </li>
-                    </ul>
-
-                    <h2>Largo de pelo</h2>
-                    <ul>
-                        <li> <input type="checkbox" id="hair_long" value='Largo'  />
-                            <label htmlFor="hair_long">Largo</label>
-                        </li>
-                        <li> <input type="checkbox" id="hair_cut" value='Corto'  />
-                            <label htmlFor="hair_cut">Corto</label>
-                        </li>
-                    </ul>
-                    <button>Aplicar</button>
-                </form>
+                    <select name="" id="" onChange={(event) => handleActivity(event)} >
+                        <option value="" select >Nivel de actividad</option>
+                        <option value="Bajo">Bajo</option>
+                        <option value="Medio">Medio</option>
+                        <option value="Alto">Alto</option>
+                    </select>
+                    <h2>Pelo</h2>
+                    <select name="" id="" onChange={(event) => handleHair(event)} >
+                        <option value="" select >Pelo</option>
+                        <option value="Corto">Corto</option>
+                        <option value="Largo">Largo</option>
+                    </select>
+                    
             </div>
-            <div class="mascotas_grid">
+            <div className="mascotas_grid">
                 {/* {perros.map((perro) => (
                     <Card
                         key={perro.id}
