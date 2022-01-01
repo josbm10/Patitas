@@ -48,7 +48,7 @@ function PageLogin() {
 
   return (
     <div className='login_container' >
-      <h1>Iniciar Sesion</h1>
+      <h2>Iniciar Sesion</h2>
       <form onSubmit={onSubmit} >
         <input
           required
