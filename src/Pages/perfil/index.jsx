@@ -3,43 +3,48 @@ import { useEffect, useState } from 'react';
 import { useParams,useHistory } from "react-router-dom";
 import axios from 'axios';
 import { FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
+
+
 function PagePerfil(props) {
 
     const [dog, setDog] = useState({});
     let history = useHistory();
-    let { idMascota } = useParams();
-    function getMascota(id) {
+    
+    let { mascota_id } = useParams();
+    function getMascota(mascota_id) {
         axios
-            .get(`http://localhost:4000/mascotas/${id}`).then((response) => setDog(response.data)).catch((e) => { });
+            .get(`http://localhost:8000/mascotas/${mascota_id}`)
+            .then((response) => {
+                console.log(response.data);
+                setDog(response.data)
+            })
+            .catch((e) => {
+                console.log(e)
+            });
     }
 
     useEffect(() => {
-        getMascota(idMascota);
+        getMascota(mascota_id);
     }, []);
 
 
     return (
+        
         <div className='perfil_container'>
-            <Breadcrumb className='Breadcrumb'>
-                <Breadcrumb.Item onClick={() => history.push('/')}>Home</Breadcrumb.Item>
-                <Breadcrumb.Item onClick={() => history.push('/adopta')} >Adopta</Breadcrumb.Item>
-                <Breadcrumb.Item active >Perfil</Breadcrumb.Item>
-            </Breadcrumb>
             <div className='perfil_carrusel'>
                 {/* <Carrusel key={dog.id} id={dog.id} photo={dog.photo}/> */}
-                <img src={dog.photo} alt={dog.name} />
+                <img src={dog.mascota_img} alt={dog.mascota_nom} />
             </div>
             <div className="perfil_detalles">
                 <ul>
-                    <li style={{fontSize:'24px'}}>{dog.name}</li>
-                    <li>Sexo: {dog.sex}</li>
-                    <li>Tamaño: {dog.tall}</li>
-                    <li>Pelo: {dog.hair}</li>
-                    <li>Edad: {dog.age} años</li>
-                    <li>Nivel de Actividad: {dog.activity}</li>
+                    <li style={{fontSize:'24px'}}>{dog.mascota_nom}</li>
+                    <li>Sexo: {dog.mascota_sex}</li>
+                    <li>Tamaño: {dog.mascota_tall}</li>
+                    <li>Pelo: {dog.mascota_hair}</li>
+                    <li>Edad: {dog.mascota_age} años</li>
+                    <li>Nivel de Actividad: {dog.mascota_act}</li>
                     <li>Conoce un poco mi historia:</li>
-                    <li>{dog.history}</li>
+                    <li>{dog.mascota_hty}</li>
                     <li className='li_buttons'>
                         <button onClick={() => history.push('/donar')}>Ayudame</button>
                         <button onClick={() => history.push('/formulario')}>Adoptame</button>

@@ -4,12 +4,12 @@ import { NavLink } from 'react-router-dom';
 
 function Footer() {
   return <footer className="hd-ft">
-    <a href=""><img className="hd-ft__logo" src={blanco} alt="logotipo" /></a>
+    <a href="/"><img className="hd-ft__logo" src={blanco} alt="logotipo" /></a>
     <nav className="hd-ft__nav">
       <ul className="hd-ft__ul">
         <li> <NavLink className="link" to='/adopta'>Adopta</NavLink></li>
         <li> <NavLink className="link responsive" to='/nosotros'>Nosotros</NavLink></li>
-        <li> <NavLink className="link" to='/tienda'>Tienda</NavLink></li>
+        {/* <li> <NavLink className="link" to='/tienda'>Tienda</NavLink></li> */}
         <li> <NavLink className="link responsive" to='/consultas'>Consultas</NavLink></li>
         <li> <NavLink className="link" to='/blog'>Blog</NavLink></li>
       </ul>

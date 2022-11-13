@@ -19,7 +19,7 @@ function PageHome() {
     return (
         <div>
             <section className="home-header" style={{ backgroundImage: `url(${bgperro})` }}>
-                <section className="header__container">
+                {/* <section className="header__container">
                     <div className="header-izq">
                         <a href="."><img class="header__logo" src={blanco} alt="logo" /></a>
                     </div>
@@ -33,18 +33,16 @@ function PageHome() {
                                 <li><Link to="/blog">Blog</Link></li>
                             </ul>
                         </nav>
-                        <div className="container-btn">
-                            <button className="btn btn-donar"><Link to="/donar">Donar</Link></button>
-                            <button className="btn btn-login"><Link to="/login">Iniciar Sesión</Link></button>
-                        </div>
+                        
                     </div>
-                </section>
+                </section> */}
                 <div className="header__cont">
                     <h1>
                         ¡Ayúdanos a construir un mundo mejor para ellos!
                     </h1>
-                    <button className="btn btn-adoptar"><Link to="/adopta">Adoptar</Link></button>
+                    
                 </div>
+                {/* <button className="btn btn-adoptar"><Link to="/adopta">Adoptar</Link></button> */}
             </section>
             <section className="nosotros">
                 <h2>

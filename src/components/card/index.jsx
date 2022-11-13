@@ -14,7 +14,8 @@ function Card(props) {
             <div className={classname}>Adoptado</div>
             <img src={photo} alt={name} />
             <h2>{name}</h2>
-            <button disabled={JSON.parse(status)} onClick={(() => { history.push(`/adopta/${id}`) })}>Adoptar</button>
+            <button disabled={JSON.parse(status)} 
+            onClick={(() => { history.push(`/adopta/${id}`) })}>Adoptar</button>
         </article>
     );
 }

@@ -8,138 +8,132 @@ import { useHistory } from 'react-router-dom';
 
 function PageAdopta() {
 
-    let history = useHistory();
+  let history = useHistory();
 
-    const [allData, setAllData] = useState([]);
-    const [filteredData, setFilteredData] = useState(allData);
-    const handleSearch = (event) => {
-      let value = event.target.value.toUpperCase();
-      let result = [];
-      result = allData.filter((data) => {
-          
-        return data.name.search(value) !== -1;
-      });
-      console.log(result)
-      setFilteredData(result);
-    }
+  const [allData, setAllData] = useState([]);
+  const [filteredData, setFilteredData] = useState(allData);
+  const [form, setForm] = useState({
+    mascota_tall: '',
+    mascota_hair: '',
+    mascota_sex: '',
+    mascota_act: '',
+  });
 
-    const handleTall = (event) => {
-        let value = event.target.value;
-        let result = [];
-        console.log(value);
-        result = allData.filter((data) => {
-          return data.tall.search(value) !== -1;
-        });
-        setFilteredData(result);
-      }
-      const handleSex = (event) => {
-        let value = event.target.value;
-        let result = [];
-        console.log(value);
-        result = allData.filter((data) => {
-          return data.sex.search(value) !== -1;
-        });
-        setFilteredData(result);
-      }
-      const handleHair = (event) => {
-        let value = event.target.value;
-        let result = [];
-        console.log(value);
-        result = allData.filter((data) => {
-          return data.hair.search(value) !== -1;
-        });
-        setFilteredData(result);
-      }
-      const handleActivity = (event) => {
-        let value = event.target.value;
-        let result = [];
-        console.log(value);
-        result = allData.filter((data) => {
-          return data.activity.search(value) !== -1;
-        });
-        setFilteredData(result);
-      }
-   
-    useEffect(() => {
-      axios.get('http://localhost:4000/mascotas')
-        .then(response => {
-          console.log(response.data)
-          setAllData(response.data);
-          setFilteredData(response.data);
-        })
-        .catch(error => {
-          console.log('Error: ' + error);
-        })
-    }, []);
+  const handleSearch = (event) => {
+    let value = event.target.value.toUpperCase();
+    let result = [];
+    result = allData.filter((data) => {
 
-    return (
+      return data.mascota_nom.search(value) !== -1;
+    });
+    console.log(result)
+    setFilteredData(result);
+  }
 
-        <div className="mascotas_container">
-            <Breadcrumb className='Breadcrumb'>
-                <Breadcrumb.Item onClick={() => history.push('/')}>Home</Breadcrumb.Item>
-                <Breadcrumb.Item active>Adopta</Breadcrumb.Item>
-            </Breadcrumb>
-            <div className="mascotas_filters">
-        
-                    <h2>Buscar :</h2>
-                    <input type="text" placeholder='Nombre' onChange={(event) => handleSearch(event)} />
-                
-                <h2>Filtrar por:</h2>
-               
-                    <h2>Tamaño</h2>
-                    <select name="" id="" onChange={(event) => handleTall(event)} >
-                        <option value="" select >Tamaño</option>
-                        <option value="Pequeño">Pequeño</option>
-                        <option value="Mediano">Mediano</option>
-                        <option value="Grande">Grande</option>
-                    </select>
-                    <h2>Sexo</h2>
-                    <select name="" id="" onChange={(event) => handleSex(event)} >
-                        <option value="" select >Sexo</option>
-                        <option value="Hembra">Hembra</option>
-                        <option value="Macho">Macho</option>
-                    </select>
-                    <h2>Nivel de actividad</h2>
-                    <select name="" id="" onChange={(event) => handleActivity(event)} >
-                        <option value="" select >Nivel de actividad</option>
-                        <option value="Bajo">Bajo</option>
-                        <option value="Medio">Medio</option>
-                        <option value="Alto">Alto</option>
-                    </select>
-                    <h2>Pelo</h2>
-                    <select name="" id="" onChange={(event) => handleHair(event)} >
-                        <option value="" select >Pelo</option>
-                        <option value="Corto">Corto</option>
-                        <option value="Largo">Largo</option>
-                    </select>
-                    
-            </div>
-            <div className="mascotas_grid">
-                {/* {perros.map((perro) => (
-                    <Card
-                        key={perro.id}
-                        id={perro.id}
-                        photo={perro.photo}
-                        name={perro.name}
-                        status={perro.status}
-                    />
-                ))} */}
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(form)
+    let result = [];
+    result = allData.filter((data) => {
 
-                {filteredData.map((value) => {
-                    return (
-                        <Card 
-                        key={value.id}
-                        id={value.id}
-                        photo={value.photo}
-                        name={value.name}
-                        status={value.status}
-                         />
-                    )
-                })}
+      return data.mascota_hair.search(form.mascota_hair) !== -1 &&
+        data.mascota_act.search(form.mascota_act) !== -1 &&
+        data.mascota_sex.search(form.mascota_sex) !== -1 &&
+        data.mascota_tall.search(form.mascota_tall) !== -1
+    });
 
-            </div>
-        </div>
-    );
+    console.log(result)
+    setFilteredData(result);
+  }
+
+  function resetForm(){
+    setFilteredData(allData)
+    setForm({})
+  }
+  
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/mascotas')
+      .then(response => {
+        console.log(response.data);
+        setAllData(response.data);
+        setFilteredData(response.data);
+      })
+      .catch(error => {
+        console.log('Error: ' + error);
+      })
+  }, []);
+
+  return (
+
+    <div className="mascotas_container">
+
+      <div className="mascotas_filters">
+
+        <h2>Buscar :</h2>
+        <input type="text" placeholder='Nombre' onChange={(event) => handleSearch(event)} />
+
+        <h2>Filtrar por:</h2>
+        <form onSubmit={handleSubmit}>
+          <h2>Tamaño</h2>
+          <select name="" id="" 
+            onChange={(e) => setForm((state) => ({ ...state, mascota_tall: e.target.value }))}
+          >
+            <option value="" selected={form.mascota_tall==''} >Tamaño</option>
+            <option value="PEQUEÑO">Pequeño</option>
+            <option value="MEDIANO">Mediano</option>
+            <option value="GRANDE">Grande</option>
+          </select>
+          <h2>Sexo</h2>
+          <select name="" id="" 
+            onChange={(e) => setForm((state) => ({ ...state, mascota_sex: e.target.value }))}
+          >
+            <option value="" selected={form.mascota_sex==''} >Sexo</option>
+            <option value="HEMBRA">Hembra</option>
+            <option value="MACHO">Macho</option>
+          </select>
+          <h2>Nivel de actividad</h2>
+          <select name="" id="" 
+            onChange={(e) => setForm((state) => ({ ...state, mascota_act: e.target.value }))}
+          >
+            <option value="" selected={form.mascota_act==''} >Nivel de actividad</option>
+            <option value="BAJO">Bajo</option>
+            <option value="MEDIO">Medio</option>
+            <option value="ALTO">Alto</option>
+          </select>
+          <h2>Pelo</h2>
+          <select name="" id="" 
+            onChange={(e) => setForm((state) => ({ ...state, mascota_hair: e.target.value }))}
+          >
+            <option value="" selected={form.mascota_hair==''} >Pelo</option>
+            <option value="CORTO">Corto</option>
+            <option value="LARGO">Largo</option>
+          </select>
+          <button>Filtrar</button>
+        </form>
+        <br />
+        <button onClick={resetForm} >Eliminar Filtros</button>
+      </div>
+      <div className="mascotas_grid">
+
+        {filteredData.map((value) => {
+          return (
+
+            <Card
+              key={value.mascota_id}
+              id={value.mascota_id}
+              photo={value.mascota_img}
+              name={value.mascota_nom}
+              status={value.mascota_est}
+            />
+          )
+        }
+        )}
+
+
+      </div>
+    </div>
+  );
 }
 
 export default PageAdopta;

@@ -7,11 +7,11 @@ const ProtectedRoute = ({ path, exact, children }) => {
         return state.auth.isLogin;
     });
 
-    const dataUser = useSelector((state) => {
-        return state.auth.userData;
-    });
+    // const dataUser = useSelector((state) => {
+    //     return state.auth.userData;
+    // });
 
-    return isLogin && dataUser.name == 'LEONEL' ? 
+    return isLogin? 
     (<Route path={path} exact={exact}>{children}</Route>) 
     : (
         <Redirect to="/login" />

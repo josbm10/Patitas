@@ -1,6 +1,7 @@
 const initialState = {
   isLogin: false,
   userData: {},
+  userToken: {},
 };
 
 function authReducer(state = initialState, action) {
@@ -10,6 +11,8 @@ function authReducer(state = initialState, action) {
       return { ...state, isLogin: action.payload };
     case 'SET_USER':
       return { ...state, userData: action.payload };
+    case 'SET_TOKEN':
+      return { ...state, userToken: action.payload };
     case 'RESET_USER':
       return initialState;
     default:

@@ -20,13 +20,17 @@ import PageModificarAnimales from "./Pages/modificarAnimales";
 import PageEliminarAnimales from "./Pages/eliminarAnimales";
 import PageRegistroAnimales from "./Pages/registroAnimales";
 import PageLogin from "./Pages/login";
+import PageBlog from "./Pages/blog";
 
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Main from "./components/main";
 import ProtectedRoute from "./components/route_privad";
 
+
+
 function App() {
+  
   return (
     <div>
       <Provider store={store}>
@@ -38,8 +42,7 @@ function App() {
                 <ProtectedRoute exact path="/administrativo">
                   <PageAdministrar />
                 </ProtectedRoute>
-                
-                <Route exact path="/administrativo/modificar_mascota">
+                <Route exact path="/administrativo/modificar_mascota/:mascota_id">
                   <PageModificarAnimales />
                 </Route>
                 <Route exact path="/administrativo/agregar_mascota">
@@ -48,8 +51,12 @@ function App() {
                 <Route exact path="/administrativo/eliminar_mascota">
                   <PageEliminarAnimales />
                 </Route>
+                
                 <Route exact path="/login">
                   <PageLogin />
+                </Route>
+                <Route exact path="/blog">
+                  <PageBlog/>
                 </Route>
                 <Route exact path="/registrarse">
                   <PageRegistroUsuarios />
@@ -70,11 +77,11 @@ function App() {
                 <Route path="/donar">
                   <PageDonar />
                 </Route>
-                <Route path="/adopta/:idMascota">
+                <Route path="/adopta/:mascota_id">
                   <PagePerfil />
                 </Route>
                 <Route path="/formulario">
-                  <PageFormulario />
+                  <PageFormulario/>
                 </Route>
                 <Route path="*">
                   <PageError />
